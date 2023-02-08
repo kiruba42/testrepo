@@ -1,0 +1,109 @@
+<p-panel header="Repo Search">
+    <ng-template pTemplate="body">
+        <form [formGroup]="formValue">
+            <div class="row">
+                <div class="col-md-4  ">
+                    <div class="col-auto ">
+                        <label>Search Type</label>
+                    </div>
+                    <div class="col-auto">
+                        <p-dropdown [options]="searchtype" optionLabel="name" placeholder="Select a Type"
+                            [style]="{'width':'80%'}" formControlName="searchtype"></p-dropdown>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="col-auto">
+                        <label>Search Word</label>
+                    </div>
+                    <div class="col-auto">
+                        <input pInputText type="text" formControlName="searchword" placeholder="Last name"
+                            style="width: 80%;">
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="col-auto">
+                        <label>Select Server </label>
+                    </div>
+                    <div class="col-auto">
+                        <p-dropdown [options]="servername" optionLabel="name" placeholder="Select a Server Name"
+                            [style]="{'width':'80%'}" formControlName="servername"></p-dropdown>
+                    </div>
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="offset-md-4 col-md-2 mb-4">
+                    <!-- <p-button (onClick)="postdata()" [disabled]="formValue.invalid" label="Submit"></p-button> -->
+                    <p-button (onClick)="submitdata()" [disabled]="formValue.invalid" label="Submit"></p-button>
+                </div>
+                <div class=" col-md-2 mb-4">
+                    <p-button type="reset" label="Reset"></p-button>
+                </div>
+
+            </div>
+        </form>
+    </ng-template>
+</p-panel>
+<br>
+    <p-table #dt responsiveLayout="scroll" [value]="tabledata" dataKey="id" [rows]="10" [showCurrentPageReport]="true"
+        [lazy]="true" (onLazyLoad)="loadCustomers($event)" [loading]="loading" [rowsPerPageOptions]="[10,25,50]"
+        styleClass="p-datatable-customers p-datatable-gridlines" [paginator]="true"
+        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+        [globalFilterFields]="['databasename','tablename','columnname','description']" responsiveLayout="scroll">
+        <ng-template pTemplate="caption">
+            <div class="flex">
+              <button
+                type="button"
+                pButton
+                pRipple
+                icon="pi pi-file"
+                (click)="dt.exportCSV()"
+                class="mr-2"
+                pTooltip="CSV"
+                tooltipPosition="bottom"
+              ></button>&nbsp;
+              <button
+                type="button"
+                pButton
+                pRipple
+                icon="pi pi-file-excel"
+                class="p-button-success mr-2"
+                pTooltip="XLS"
+                (click)="exportExcel()"
+                tooltipPosition="bottom"
+              ></button>
+            </div>
+          </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th> Database Name
+                    <p-columnFilter type="text" field="databasename" display="menu">
+                    </p-columnFilter>
+                </th>
+                <th>Table Name
+                    <p-columnFilter type="text" field="tablename" display="menu">
+                    </p-columnFilter>
+                </th>
+                <th>Column Name
+                    <p-columnFilter type="text" field="columnname" display="menu">
+                    </p-columnFilter>
+                </th>
+                <th>Description
+                    <p-columnFilter type="text" field="description" display="menu">
+                    </p-columnFilter>
+                </th>
+                <th>Designation
+                    <p-columnFilter type="date" field="designationname" display="menu">
+                    </p-columnFilter>
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-value>
+
+            <tr>
+                <td>{{value.databasename}}</td>
+                <td>{{value.tablename}}</td>
+                <td>{{value.columnname}}</td>
+                <td>{{value.description}}</td>
+            </tr>
+        </ng-template>
+    </p-table>

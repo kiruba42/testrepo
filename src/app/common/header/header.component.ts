@@ -1,14 +1,12 @@
-import { Component, HostListener, Input, OnInit } from '@angular/core';
+import { Component, HostListener, Input } from '@angular/core';
 import { languages, notifications, userItems } from './header-dummy-data';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  // styleUrls: ['./header.component.css']
-  styleUrls: ['./headerstyle.scss']
+  styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
-  
+export class HeaderComponent {
   @Input() collapsed=false;
   @Input() screenWidth=0;
   

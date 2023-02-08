@@ -22,6 +22,7 @@ i {
     padding-block: 1rem;
     background-color: #151823;
     color: #666873;
+    position: relative;
 }
 
 .footer-container {

@@ -10,6 +10,7 @@
 }
 .head .head-content {
     background-color: #fff;
+    /* background: #f01716; */
     border-radius: 0.625rem;
     box-shadow: 0px 0px 10px 0 rgb(34 41 47/10%);
     padding: 0.813rem 1.563rem;
@@ -36,7 +37,8 @@
     line-height: 2.375rem;
     left: 0.813;
     top: 0;
-    color: #74788d;
+    /* color: #74788d; */
+    color: #fff;
 }
 .head .head-content .head-content-left .search-container .search-menu-btn {
     font-size: 18px;
@@ -94,8 +96,10 @@
 .head .head-content .head-content-right .head-user-avatar-container .head-user-avatar .user-avatar {
     margin-bottom: -4px;
     width: 50px;
+    /* add */
+    /* color: #fff; */
     border-radius: 10px;
-    box-shadow: 0 0 15px rgb(35 35 35/15%);
+    box-shadow: 0 0 15px rgba(35, 35, 35, 0.15);
     cursor: pointer;
 }
 .head .head-content .head-content-right .head-user-avatar-container .circle-indicator {
@@ -105,7 +109,8 @@
     position: absolute;
     top: -2px;
     right: -3px;
-    background: #699dfa;
+    /* background: #699dfa; */
+    background: #fff;
 }
 .head .head-content .head-content-right .head-user-avatar-container .circle-indicator.pulse {
     animation: pulse-animation 1.2s infinite;
