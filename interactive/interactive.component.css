@@ -1,0 +1,42 @@
+.search-container{
+    width: 490px;
+    display: block;
+    margin: 0 auto;
+  }
+
+   .searchinput{
+      margin: 0 auto;
+      width: 86%;
+      height: 45px;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: 1px solid #D0CFCE;
+      outline: none;
+margin-right: 8px;
+
+   }
+   .labelcls{
+    margin-top: 8px;
+    font-size: 20px;
+   }
+   .convertcls{
+    width: 78px;
+    height: 44px;
+    background-color: black;
+    color: white;
+    border-radius: 4px;
+    font-size: 14px;
+   }
+   
+   .lower_case{
+    text-transform: lowercase;
+   }
+
+   .upper_case{
+    text-transform: uppercase;
+   }
+
+   .bold_text{
+    font-weight: bold;
+   }

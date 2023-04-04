@@ -1,0 +1,32 @@
+<p-card header="Interactive Mode">
+<div class="container" style="margin-top: 40px;">
+  <div class="row">
+    <div class="col-12">
+      <div class="col-3" style="float:left">
+        <label class="labelcls">Data Element Name</label>
+      </div>
+      <div class="col-9" style="float:right">
+        <input type="text" class="searchinput" [(ngModel)]="searchTerm">
+      </div>
+      <div class="col-3" style="float:left; margin-top:24px;">
+        <label class="labelcls" style="margin-top: 26px;">Get Equvalent</label>
+      </div>
+      <div class="col-9" style="float:right; margin-top:24px;">
+        <mat-select class="searchinput" [(value)]="selected">
+          <mat-option value="UC">Upper Case</mat-option>
+          <mat-option value="LC">Lower Case</mat-option>
+          <mat-option value="Bold">Bold</mat-option>
+        </mat-select>
+        <button class="convertcls" (click)="convertText()">Convert</button>
+      </div>
+    </div>
+    <div class="col-12" style="text-align: center; margin-top: 120px;">
+      <p>Exception Report</p>
+      <textarea [(ngModel)]="finalText" rows="5" cols="100" [ngClass]="{
+        lower_case: finalTextCode === 'LC',
+        upper_case: finalTextCode === 'UC',
+        bold_text: finalTextCode === 'Bold'}"></textarea>
+    </div>
+  </div>
+</div>
+</p-card>
