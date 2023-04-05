@@ -1,0 +1,54 @@
+<!-- <p-panel header="Batch Mode"> -->
+<h3>Options</h3>
+<input type="radio" id="file" value="convertfile" name="file" ngModule>
+<label for="convert">Convert the Input File</label><br>
+<input type="radio" id="file" value="createfile" name="file" ngModule>
+<label for="convert">Create Input File</label><br>
+<label class="labelcls">File</label>
+<div class="col-9" style="float:right">
+    <input type="text" class="searchinput" [(ngModel)]="searchTerm">
+</div>
+<div class="sheet">
+    <label class="labelcls" style="margin-top: 26px;">Sheet</label>
+    <p-dropdown [options]="sheets" [(ngModel)]="selectedsheet" optionLabel="name"></p-dropdown><br>
+</div>
+
+<div class="column">
+    <label class="labelcls" style="margin-top: 26px;">Column</label>
+    <p-dropdown [options]="Column" [(ngModel)]="selectedcolumn" optionLabel="name"></p-dropdown>
+    
+</div>
+<div class="button">
+    <button class="generatecls">Generate</button>
+</div>
+
+
+<!-- <div class="box1">
+    <h4>Available Alias Conversions List</h4>
+    <p-listbox [options]="files" [(ngModel)]="selectedfile" optionLabel="name" [style]="{'width':'15rem'}"></p-listbox>
+</div> -->
+
+<div cdkDropListGroup>
+    <div class="example-container">
+<h5>Available Alias Conversion List</h5>
+<div 
+cdkDropList
+[cdkDropListData]="todo"
+class="example-list"
+(cdkDropListDropped)="drop($event)">
+<div class="example-box" *ngFor="let iteam of todo" cdkDrag>{{iteam}}</div>
+    </div>
+
+    <div class="example-container">
+        <h5>Select Alias Conversion List</h5>
+        <div 
+        cdkDropList
+        [cdkDropListData]="done"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let iteam of done" cdkDrag>{{iteam}}</div>
+            </div>
+</div>
+
+
+<!-- </p-panel> -->
