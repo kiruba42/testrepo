@@ -8,6 +8,7 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/dra
   styleUrls: ['./batchmode.component.css']
 })
 export class BatchmodeComponent {
+  checked!: boolean;
   searchTerm: any;
   file = [
     {id:'1', value: 'convertfile'},
@@ -45,5 +46,5 @@ drop(event: CdkDragDrop<string[]>){
       event.currentIndex);
   }
 }
-
+ 
 }

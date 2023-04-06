@@ -1,18 +1,16 @@
 .searchinput {
-    margin: 0 auto;
-    width: 62%;
-    height: 20px;
-    border-radius: 10px;
-    padding: 17px 14px;
-    font-size: 86rem;
+    
+    width: 50%;   
+    border-radius: 4px;
+    padding: 5px;
     border: 1px solid #D0CFCE;
     outline: none;
-    margin-left: 357px;
-    margin-top: -32px;
+    /* margin-left: 357px; */
+    /* margin-top: -32px; */
 }
 .labelcls {
-    margin-left: 310px;
-    font-size: 26px;   
+    margin-right: 8px;
+    font-size: 20px;   
 }
 .sheet{
     position: relative;
@@ -23,10 +21,9 @@
 }
 .column{
     position: relative;
-    display: inline-block;
+    /* display: inline-block; */
     bottom: 408px;
-    right: 24px;
-     
+    right: 24px;    
     
 }
 .generatecls{
@@ -37,8 +34,6 @@
     color: white;
     border-radius: 4px;
     font-size: 14px;
-    bottom: 400px;
-    left: 370px;
 }
 .box1{
     position: relative;
@@ -78,12 +73,11 @@
   .example-container{
     position: relative;
     width: 400px;
-    max-width: 200%;
+    max-width: 2 00%;
     margin: 0 25px 25px 0;
     display: inline-block;
     vertical-align: top;
-    left: 350px;
-    bottom: 300px;
+   
 
   }
   
@@ -129,7 +123,11 @@
   .example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder){
     transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
   }
+
+.box{
+  left: 20px;
+  bottom: 0px;
+}
   
   
-  
-  
+   
