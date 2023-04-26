@@ -1,0 +1,30 @@
+<p-panel header="Interactive Mode">
+    <ng-template pTemplate="body">
+        <form [formGroup]="formValue" class="form-card">
+            <div class="row justify-content-between text-left">
+
+                <div class="form-group col-sm-2 flex-column">
+                </div>
+                    <div class="form-group col-sm-2 flex-column">
+                    <span class="p-input-icon-left p-float-label">
+                        <i class="pi pi-search"></i>
+                        <input type="text" pInputText id="keyword"  [style]="{'width':'100%'}"  formControlName="keyword"
+                            (ngModelChange)="searchdata($event)" />
+                        <label htmlFor="keyword">Data Element Name</label>
+                    </span>
+                </div>
+                <div class="form-group col-sm-3 flex-column ">
+                    <p-dropdown [options]="alias" [style]="{'width':'100%'}" formControlName="convertaliastype" placeholder="Select a Alias" optionLabel="label">
+                    </p-dropdown>
+                </div>
+                <div class="form-group col-sm-3 flex-column ">
+                    <button pButton label="Convert" (click)="submit()"><i class="pi pi-sync"
+                            style="font-size: 1rem"></i>&nbsp;&nbsp;</button>
+                </div>
+                <div class="form-group col-sm-2 flex-column ">
+                    </div>
+            </div>
+            <br>
+        </form>
+    </ng-template>
+</p-panel>
