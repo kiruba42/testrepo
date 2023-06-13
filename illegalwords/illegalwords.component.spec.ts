@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DashboardComponent } from './dashboard.component';
+import { IllegalwordsComponent } from './illegalwords.component';
 
-describe('DashboardComponent', () => {
-  let component: DashboardComponent;
-  let fixture: ComponentFixture<DashboardComponent>;
+describe('IllegalwordsComponent', () => {
+  let component: IllegalwordsComponent;
+  let fixture: ComponentFixture<IllegalwordsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DashboardComponent ]
+      declarations: [ IllegalwordsComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(DashboardComponent);
+    fixture = TestBed.createComponent(IllegalwordsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
