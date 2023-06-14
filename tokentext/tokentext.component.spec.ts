@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { IllegalwordsComponent } from './illegalwords.component';
+import { TokentextComponent } from './tokentext.component';
 
-describe('IllegalwordsComponent', () => {
-  let component: IllegalwordsComponent;
-  let fixture: ComponentFixture<IllegalwordsComponent>;
+describe('TokentextComponent', () => {
+  let component: TokentextComponent;
+  let fixture: ComponentFixture<TokentextComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ IllegalwordsComponent ]
+      declarations: [ TokentextComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(IllegalwordsComponent);
+    fixture = TestBed.createComponent(TokentextComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
