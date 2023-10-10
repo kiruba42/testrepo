@@ -1,0 +1,287 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,300;1,400;1,500;1,700&display=swap');
+@import url("https://pro.fontawesome.com/releases/v5.10.0/css/all.css");
+
+/* =============== Globals ============== */
+* {
+  font-family: "Ubuntu", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blue: #2a2185;
+  --white: #fff;
+  --gray: #f5f5f5;
+  --black1: #222;
+  --black2: #999;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+/* =============== Navigation ================ */
+.navigation {
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  background: #2a2185;
+  border-left: 10px solid #2a2185;
+  transition: 0.5s;
+  overflow: hidden;
+}
+.navigation-active {
+  width: 80px;
+}
+
+/* ===================== Main ===================== */
+.main {
+  position: absolute;
+  width: calc(100% - 300px);
+  left: 300px;
+  min-height: 100vh;
+  background: #fff;
+  transition: 0.5s;
+}
+.main-active {
+  width: calc(100% - 0px);
+  left: 0px;
+}
+
+.topbar {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.toggle {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+.search {
+  position: relative;
+  width: 400px;
+  margin: 0 10px;
+}
+
+.search label {
+  position: relative;
+  width: 100%;
+}
+
+.search label input {
+  width: 100%;
+  height: 40px;
+  border-radius: 40px;
+  padding: 5px 20px;
+  padding-left: 35px;
+  font-size: 18px;
+  outline: none;
+  border: 1px solid #000;
+}
+
+.search label i {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  font-size: 1.2rem;
+}
+
+.user {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.user img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+/* ====================== Responsive Design ========================== */
+@media (max-width: 991px) {
+  .navigation {
+    left: -300px;
+  }
+  .navigation-active {
+    width: 300px;
+    left: 0;
+  }
+  .main {
+    width: 100%;
+    left: 0;
+  }
+  .main-active {
+    left: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .user {
+    min-width: 40px;
+  }
+  .navigation {
+    width: 100%;
+    left: -100%;
+    z-index: 1000;
+  }
+  .navigation-active {
+    width: 100%;
+    left: 0;
+  }
+  .toggle {
+    z-index: 10001;
+  }
+  .main-active .toggle {
+    color: #fff;
+    position: fixed;
+    right: 0;
+    left: initial;
+  }
+}
+
+
+
+.sidenav-nav {
+  list-style: none;
+  padding: 0.938rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+.sidenav-nav .sidenav-nav-item {
+  width: 100%;
+  margin-bottom: 0.625rem;
+}
+.sidenav-nav .sidenav-nav-item .sidenav-nav-link {
+  display: flex;
+  align-items: center;
+  height: 3rem;
+  color: #f3f3f3;
+  border-radius: 0.625rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.sidenav-nav .sidenav-nav-item .sidenav-nav-link .sidenav-link-icon {
+  font-size: 22px;
+  width: 2rem;
+  min-width: 2rem;
+  margin: 0 0.5rem;
+  text-align: center;
+}
+.sidenav-nav .sidenav-nav-item .sidenav-nav-link .sidenav-link-text {
+  margin-left: 1.5rem;
+  font-size: 14px;
+}
+.sidenav-nav .sidenav-nav-item:hover .sidenav-nav-link {
+  background-color: #fff;
+  color: #000;
+}
+.active {
+  background-color: #fff;
+}
+.active .menu-collapse-icon .sidenav-link-icon, .active .sidenav-link-text {
+  color: #000;
+
+}
+.active .menu-collapse-icon .sidenav-link-icon, .active .sidenav-link-icon {
+  color: #000;
+}
+.active-sublevel {
+  color: #f3f3f3 !important;
+}
+.menu-collapse-icon {
+  font-size: 25px;
+  width: 2rem;
+  min-width: 2rem;
+  margin: auto 0.5rem auto auto;
+  text-align: center;
+  color: #f3f3f3;
+}
+.sublevel-nav {
+  list-style: none;
+  margin-left: 10px;
+}
+.sublevel-nav .sublevel-nav-item .sublevel-nav-link {
+  display: flex;
+  align-items: center;
+  height: 3rem;
+  color: #898989;
+  text-decoration: none;
+  border-radius: 0.625rem;
+  transition: all 0.3s ease;
+}
+.sublevel-nav .sublevel-nav-item .sublevel-nav-link .sublevel-link-icon {
+  font-size: 4px;
+  width: 2rem;
+  min-width: 2rem;
+  margin: 0 0.5rem;
+  text-align: center;
+}
+.sublevel-nav .sublevel-nav-item .sublevel-nav-link .sublevel-link-text {
+  margin-left: 0.8rem;
+  font-size: 14px;
+}
+.sublevel-nav .sublevel-nav-item .sublevel-nav-link:hover {
+  columns: #f3f3f3;
+}
+
+
+
+.scrollwrap {
+  overflow-y: auto;
+  visibility: hidden;
+  height: calc(100% - 3.65rem);
+}
+.sidenav-nav, .scrollwrap:hover, .scrollwrap:focus {
+  visibility: visible;
+}
+.scrollwrap_delayed {
+  transition: visibility 0.5s 0.2s;
+}
+.scrollwrap_delayed:hover {
+  transition: visibility 0.2s 0.2s;
+}
+.scrollwrap::-webkit-scrollbar {
+  width: 10px;
+}
+.scrollwrap::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scrollwrap::-webkit-slider-thumb {
+  background-color: #556268;
+  border-radius: 20px;
+}
+.scrollwrap {
+  scrollbar-width: thin;
+  scrollbar-color: #556268 transparent;
+}

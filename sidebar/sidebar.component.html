@@ -1,0 +1,137 @@
+
+
+<body>
+    <!-- =============== Navigation ================ -->
+    <div class="container">
+        <div class="navigation" [ngClass]="display?'navigation-active':''">
+            <div class="scrollwrap scrollwrap_delayed">
+                <ul class="sidenav-nav">
+                    <li class="sidenav-nav-item" *ngFor="let data of navData">
+                        <a (click)="handleClick(data)" class="sidenav-nav-link" 
+                        *ngIf="data.items && data.items.length>0" 
+                        [ngClass]="getActiveClass(data)" >
+                            <i class="sidenav-link-icon" [class]="data.icon"></i>
+                            <span class="sidenav-link-text"  @fadeInOut *ngIf="collapsed">
+                                {{data.label}}
+                            </span>
+                            <i *ngIf="data.items &&collapsed" class="menu-collapse-icon"
+                                [ngClass]="!data.expanded?'fal fa-angle-right':'fal fa-angle-down'">
+                            </i>
+                        </a>
+                        <a *ngIf="!data.items ||(data.items && data.items.length===0)" class="sidenav-nav-link"
+                            [routerLink]="[data.routerlink]" routerLinkActive="active" 
+                            [routerLinkActiveOptions]="{exact:true}"
+                            (click)="shrinkItems(data)">
+                            <i class="sidenav-link-icon" [class]="data.icon"></i>
+                            <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">{{data.label}}</span>
+                        </a>
+                        <div *ngIf="collapsed && data.items && data.items.length>0">
+                            <app-sublevel [data]="data" [collapsed]="collapsed" [multiple]="multiple"
+                                [expanded]="data.expanded">
+                            </app-sublevel>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <i class="fas fa-clock"></i>
+                        </span>
+                        <span class="title">Brand Name</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <i class="fas fa-coin"></i>
+                        </span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <i class="fas fa-coin"></i>
+                        </span>
+                        <span class="title">Customers</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <i class="fas fa-coin"></i>
+                        </span>
+                        <span class="title">Messages</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <i class="fas fa-coin"></i>
+                        </span>
+                        <span class="title">Help</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <i class="fas fa-coin"></i>
+                        </span>
+                        <span class="title">Settings</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <i class="fas fa-coin"></i>
+                        </span>
+                        <span class="title">Password</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <i class="pi pi-sign-out"></i>
+                        </span>
+                        <span class="title">Sign Out</span>
+                    </a>
+                </li>
+            </ul> -->
+        </div>
+
+        <!-- ========================= Main ==================== -->
+        <div class="main" [ngClass]="display?'main-active':''">
+            <div class="topbar">
+                <div class="toggle">
+                    <a (click)="close()">
+                        <i class="fal fa-bars"></i>
+                    </a>
+                </div>
+
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search here">
+                        <i class="pi pi-search"></i>
+                    </label>
+                </div>
+
+                <div class="user">
+                    <img src="assets/imgs/customer01.jpg" alt="">
+                </div>
+            </div>
+
+            <!-- ======================= body ================== -->
+            <app-test></app-test>
+        </div>
+    </div>
+
+</body>
